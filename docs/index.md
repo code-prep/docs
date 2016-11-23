@@ -40,7 +40,7 @@ chapter1.md
 
 ```
 
-この２ファイルを[Preview App](README.md)を通して見ると「<p>Hello [     ]</p>」というページが表示されます。
+この２ファイルを[Preview App](https://github.com/givery-technology/book-codeprep)を通して見ると「<p>Hello [     ]</p>」というページが表示されます。
 
 以下それぞれのファイルについて説明していきます。
 
@@ -95,7 +95,7 @@ book.ymlのfilesにはすべてのチャプター、セクションで横断的�
 以下のようにマークダウンのリンク形式で記述することにより実際のファイルパスと表示上のファイル名を変更することができます。
 
 ```
-- [main.css](files/something.css)
+- [main.css](https://github.com/givery-technology/book-codeprep/files/something.css)
 ```
 
 ## チャプター定義ファイル
@@ -229,8 +229,8 @@ JSON内で定義できるキーは以下です。
 
 この設定は文字列が正規表現、あるいはJSONと解釈されるのを防ぎたい場合に有効です。
 
-注. 
-この機能はエスケープではなくあくまで先頭の「\」をスキップするだけの機能です。 
+注.
+この機能はエスケープではなくあくまで先頭の「\」をスキップするだけの機能です。
 シンプルな文字列と解釈される場合のエスケープ機能はありません。
 
 #### `$`の別の文字への変更
@@ -277,7 +277,7 @@ filesには参照する外部ファイルをリスト形式で複数設定でき
 ### files
 
 - main.css
-- [main.js](chapter1/section1_main.js)
+- [main.js](https://github.com/givery-technology/book-codeprep/chapter1/section1_main.js)
 ```
 
 Markdownのリンク書式を使用して実際のファイル名と表示上のファイル名を変更することも可能です。
@@ -389,7 +389,7 @@ remote実行時には以下のファイルが実行サーバーにコピーさ�
 
 - build: npm install
 - command: node main.js
-- file: [package.json](chapter1/package.json)
+- file: [package.json](https://github.com/givery-technology/book-codeprep/chapter1/package.json)
 
 ```
 
@@ -489,7 +489,7 @@ ${codeprep:section(prev)}
 <${p}>This is p<${/p}>
 ```
 
-注. 
+注.
 Answerを正規表現で定義している場合、正解を決定できないことがあります。  
 例えば `${abc|def}` という正規表現では"abc"と"def"のどちらを正解とするべきか判断できません。  
 この場合はコンパイルエラーとなるのでJSON形式でのAnswer定義を使用してください。
