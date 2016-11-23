@@ -137,7 +137,7 @@ chapters:
 
 </code></pre>
 
-<p>この２ファイルを<a href="README.md">Preview App</a>を通して見ると「<p>Hello [     ]</p>」というページが表示されます。</p>
+<p>この２ファイルを<a href="https://github.com/givery-technology/book-codeprep">Preview App</a>を通して見ると「<p>Hello [     ]</p>」というページが表示されます。</p>
 <p>以下それぞれのファイルについて説明していきます。</p>
 <h2 id="bookyml">book.yml</h2>
 <p>book.ymlはBook全体の定義が記述されたファイルです。</p>
@@ -178,7 +178,7 @@ chapters:
 <li>ファイルの内容が途中で変わる場合</li>
 </ul>
 <p>以下のようにマークダウンのリンク形式で記述することにより実際のファイルパスと表示上のファイル名を変更することができます。</p>
-<pre><code>- [main.css](files/something.css)
+<pre><code>- [main.css](https://github.com/givery-technology/book-codeprep/files/something.css)
 </code></pre>
 
 <h2 id="_2">チャプター定義ファイル</h2>
@@ -284,8 +284,8 @@ CODEPREPではひとつのチャプターがひとつのファイルに対応し
 - ${\/p}
 - ${{}</p>
 <p>この設定は文字列が正規表現、あるいはJSONと解釈されるのを防ぎたい場合に有効です。</p>
-<p>注. 
-この機能はエスケープではなくあくまで先頭の「\」をスキップするだけの機能です。 
+<p>注.
+この機能はエスケープではなくあくまで先頭の「\」をスキップするだけの機能です。
 シンプルな文字列と解釈される場合のエスケープ機能はありません。</p>
 <h4 id="_10"><code>$</code>の別の文字への変更</h4>
 <p><code>${xxx}</code>という書式はES6やScalaでは構文として使用されています。<br />
@@ -319,7 +319,7 @@ CODEPREPではひとつのチャプターがひとつのファイルに対応し
 <pre><code>### files
 
 - main.css
-- [main.js](chapter1/section1_main.js)
+- [main.js](https://github.com/givery-technology/book-codeprep/chapter1/section1_main.js)
 </code></pre>
 
 <p>Markdownのリンク書式を使用して実際のファイル名と表示上のファイル名を変更することも可能です。</p>
@@ -417,7 +417,7 @@ ${puts} &quot;Hello World&quot;
 
 - build: npm install
 - command: node main.js
-- file: [package.json](chapter1/package.json)
+- file: [package.json](https://github.com/givery-technology/book-codeprep/chapter1/package.json)
 
 </code></pre>
 
@@ -493,7 +493,7 @@ ${puts} &quot;Hello World&quot;
 &lt;${p}&gt;This is p&lt;${/p}&gt;
 </code></pre>
 
-<p>注. 
+<p>注.
 Answerを正規表現で定義している場合、正解を決定できないことがあります。<br />
 例えば <code>${abc|def}</code> という正規表現では"abc"と"def"のどちらを正解とするべきか判断できません。<br />
 この場合はコンパイルエラーとなるのでJSON形式でのAnswer定義を使用してください。</p>
