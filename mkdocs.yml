@@ -1,2 +1,7 @@
 site_name: CODEPREP documentation
+pages:
+  - CODEPREP documentへようこそ: index.md
+  - CODEPREP bookの作り方: how-to-make-book.md
+  - CODEPREP sample bookを作る: get-start.md
+
 theme: yeti
