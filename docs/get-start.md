@@ -1,7 +1,7 @@
 ## CODEPREP bookをつくってみよう
 ここでは簡単なサンプルBookをつくる手順を示します。
 ### 1. Preview Appのセットアップ
-CODEPREP Bookを編集するために、ローカル環境で簡単にBookを動かす(https://github.com/givery-technology/book-codeprep)を提供しています。  
+CODEPREP Bookを編集するために、ローカル環境で簡単にBookを動かす[Preview App](https://github.com/givery-technology/book-codeprep)を提供しています。  
 
 まずは以下のコマンドを実行して、Preveiw Appの環境を構築します。
 
