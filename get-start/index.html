@@ -96,11 +96,59 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
+        <li class="main active"><a href="#codeprep-book">CODEPREP bookをつくってみよう</a></li>
+        
+            <li><a href="#1-preview-app">1. Preview Appのセットアップ</a></li>
+        
+            <li><a href="#2-book">2. サンプルBookのインストール</a></li>
+        
+            <li><a href="#3-book">3. サンプルBookをプレビュー</a></li>
+        
+            <li><a href="#4bookcodeprep-book">4.サンプルBookでCODEPREP Bookで出来ることを確認してみよう</a></li>
+        
+    
+        <li class="main "><a href="#todo">ToDo</a></li>
+        
+    
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-</div>
+<h2 id="codeprep-book">CODEPREP bookをつくってみよう</h2>
+<p>ここでは簡単なサンプルBookをつくる手順を示します。</p>
+<h3 id="1-preview-app">1. Preview Appのセットアップ</h3>
+<p>CODEPREP Bookを編集するために、ローカル環境で簡単にBookを動かす(https://github.com/givery-technology/book-codeprep)を提供しています。  </p>
+<p>まずは以下のコマンドを実行して、Preveiw Appの環境を構築します。</p>
+<pre><code class="bash">$ git clone git@github.com:givery-technology/codeprep-backend.git
+$ git clone git@github.com:givery-technology/book-codeprep.git
+$
+$ cd book-codeprep
+$
+$ export CODEPREP_BACKEND_PATH=../codeprep-backend
+$ ./setup.sh
+</code></pre>
+
+<h3 id="2-book">2. サンプルBookのインストール</h3>
+<p>次に、サンプルアプリをインストールします。  </p>
+<pre><code class="bash">$ cd ../
+$ git clone git@github.com:code-prep/sample-book.git
+</code></pre>
+
+<h3 id="3-book">3. サンプルBookをプレビュー</h3>
+<p>サンプルBookをPreview Appを使って開いてみましょう。<br />
+Preview Appでサンプルアプリを実行するには、<code>BOOK_SRCDIR</code>にサンプルBookを指定する必要があります。</p>
+<pre><code>$　cd book-codeprep
+$ sbt run -DBOOK_SRCDIR=../sample-book
+</code></pre>
+
+<p><code>http://localhost:9000/</code>にアクセスすると、指定されたサンプルBookをプレビューすることが出来ます。<br />
+(また、portを変更するにはコマンドラインにて <code>-Dhttp.port=8000</code>のような形で変更することも可能です。)</p>
+<h3 id="4bookcodeprep-book">4.サンプルBookでCODEPREP Bookで出来ることを確認してみよう</h3>
+<p>サンプルBookには、CODEPREP Bookで出来ることが記載されています。<br />
+<a href="../how-to-make-book/">CODEPREP bookの作り方</a>を参照しながら、あなただけのオリジナルBookを作成してみてください。</p>
+<h2 id="todo">ToDo</h2>
+<p>Separate BookCompiler from codeprep-backend and get it from some repo.</p>
+<p>Then we can provide this app to external authors.</p></div>
         </div>
 
         <footer class="col-md-12">
