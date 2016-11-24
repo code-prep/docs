@@ -51,7 +51,19 @@
             
             
                 <li class="active">
-                    <a href=".">Home</a>
+                    <a href=".">CODEPREP documentへようこそ</a>
+                </li>
+            
+            
+            
+                <li >
+                    <a href="how-to-make-book/">CODEPREP bookの作り方</a>
+                </li>
+            
+            
+            
+                <li >
+                    <a href="get-start/">CODEPREP sample bookを作る</a>
                 </li>
             
             
@@ -69,8 +81,8 @@
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
-                <li class="disabled">
-                    <a rel="prev" >
+                <li >
+                    <a rel="prev" href="how-to-make-book/">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -84,516 +96,30 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#codeprep-book">CODEPREP Bookの作り方</a></li>
+        <li class="main active"><a href="#codeprep">CODEPREPドキュメントへようこそ</a></li>
         
-            <li><a href="#_1">概要</a></li>
+            <li><a href="#_1">はじめに</a></li>
         
-            <li><a href="#book">最小限のBook</a></li>
-        
-            <li><a href="#bookyml">book.yml</a></li>
-        
-            <li><a href="#_2">チャプター定義ファイル</a></li>
-        
-            <li><a href="#_11">高度な機能</a></li>
+            <li><a href="#book">Bookを作ってみましょう</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h1 id="codeprep-book">CODEPREP Bookの作り方</h1>
-<h2 id="_1">概要</h2>
-<p>CODEPREPのBookはそのほとんどがMarkdownで作成できるように設計されています。<br />
-この文書ではBookを構成する各種ファイルの詳細について説明します。</p>
-<h2 id="book">最小限のBook</h2>
-<p>説明に先立ってまず最小限のBookの例を示します。</p>
-<p>以下は</p>
+<h1 id="codeprep">CODEPREPドキュメントへようこそ</h1>
+<p>CODEPREPドキュメントへようこそ。このドキュメントでは、CODEPREP上に専用のプログラミング学習BOOKを書くための方法について解説をします。</p>
+<h2 id="_1">はじめに</h2>
+<h3 id="codeprep_1">CODEPREPとは</h3>
+<p><a href="https://codeprep.jp">CODEPREP</a>とは、オンライン上でプログラムを書いて実行しながらページを読み進め、実践力を身につける初心者向けのオンラインプログラミング学習サービスです。</p>
+<h3 id="codeprep-book">CODEPREP Bookとは</h3>
+<p>CODEPREP上に掲載されているコンテンツの事を指します。</p>
+<h2 id="book">Bookを作ってみましょう</h2>
+<p>CODEPREPでは誰もが簡単にBOOKを展開できるような機能を展開することで、新しい技術を誰でも簡単に学べるeBOOKプラットフォームを目指しています。基本的にはCODEPREP Officialチームがユーザに向けてBOOKを展開していますが、Bookの作成手順を公開してくことで、サービスのオープン化を目指します。  </p>
 <ul>
-<li>book.yml</li>
-<li>chapter1.md</li>
-</ul>
-<p>の２ファイルからなる、1チャプター、1セクションのBookの例です。</p>
-<p>注. 例の中ではマークダウンのコードブロックが<code>\\</code>```のように示されています。</p>
-<p>book.yml</p>
-<pre><code>title: はじめてのCODEPREP
-detail: CODEPREPのBookのサンプルです。
-chapters:
-  - chapter1.md
-</code></pre>
-
-<p>chapter1.md</p>
-<pre><code># 最初のチャプター
-チャプター定義のサンプルです。
-
-## 最初のセクション
-セクション定義のサンプルです。
-ブランクを埋めて「Hello World」と出力されるHTMLを完成させてください。
-
-### main(index.html)
-
-\```
-&lt;p&gt;Hello ${World}&lt;/p&gt;
-\```
-
-</code></pre>
-
-<p>この２ファイルを<a href="https://github.com/givery-technology/book-codeprep">Preview App</a>を通して見ると「<p>Hello [     ]</p>」というページが表示されます。</p>
-<p>以下それぞれのファイルについて説明していきます。</p>
-<h2 id="bookyml">book.yml</h2>
-<p>book.ymlはBook全体の定義が記述されたファイルです。</p>
-<p>以下のキーを含みます。</p>
-<ul>
-<li>title: String, 必須</li>
-<li>detail: String, 必須</li>
-<li>chapters: List[String], 一つ以上必須</li>
-<li>image: String, 任意</li>
-<li>files: List[String], 任意</li>
-</ul>
-<h3 id="title">title</h3>
-<p>titleにはBookのタイトルを指定します。</p>
-<h3 id="detail">detail</h3>
-<p>detailにはBookの概要説明を指定します。<br />
-複数行指定したい場合はYamlのパイプ(|)を使用してください。</p>
-<pre><code>detail: |
-  Bookの説明です。
-  パイプ(|)を使用して複数行で記述しています。
-</code></pre>
-
-<h3 id="chapters">chapters</h3>
-<p>chaptersには各チャプターの定義ファイルを指定します。<br />
-指定したファイルは必ずそのパスに存在しなければなりません。</p>
-<p>リストの順番がそのままチャプターの順序になります。</p>
-<p>チャプター定義ファイルの名前は任意であり、サブディレクトリに置くこともできます。</p>
-<h3 id="image">image</h3>
-<p>imageにはBookのカバー画像のファイルパスを指定します。<br />
-指定したファイルは必ずそのパスに存在しなければなりません。</p>
-<p>imageを省略してもコンパイルエラーとはなりませんが、Bookの公開までには必ず画像ファイルを用意してください。</p>
-<h3 id="files">files</h3>
-<p>book.ymlのfilesにはすべてのチャプター、セクションで横断的に使用するファイルを指定します。<br />
-ここで指定されたファイルはBookReaderのエディタ部でタブとして表示されます。
-指定したファイルは必ずそのパスに存在しなければなりません。</p>
-<p>以下のような場合にはbook.ymlではなく、個別のセクションのfilesサブセクションで指定するようにしてください。</p>
-<ul>
-<li>ファイル(例: main.css)が1章では参照されないが、2章以降で参照される場合</li>
-<li>ファイルの内容が途中で変わる場合</li>
-</ul>
-<p>以下のようにマークダウンのリンク形式で記述することにより実際のファイルパスと表示上のファイル名を変更することができます。</p>
-<pre><code>- [main.css](https://github.com/givery-technology/book-codeprep/files/something.css)
-</code></pre>
-
-<h2 id="_2">チャプター定義ファイル</h2>
-<p>チャプター定義ファイルはMarkdown形式で記述されたチャプターの定義ファイルです。<br />
-CODEPREPではひとつのチャプターがひとつのファイルに対応し、その中に複数のセクションを含めることができます。</p>
-<h3 id="_3">チャプター定義ファイルの見出し</h3>
-<p>チャプター定義ファイルではマークダウンの見出し(#, ##, ###)を各種定義の区切りとして使用しています。<br />
-それぞれの見出しは以下の意味を持ちます。</p>
-<ul>
-<li>見出し1(#)はチャプターのタイトルを示します。</li>
-<li>チャプタータイトルは自由につけることができます。</li>
-<li>チャプター定義ファイルは必ず見出し1(#)で始まらなければなりません。</li>
-<li>見出し1(#)はチャプター定義ファイル内に複数定義してはいけません。</li>
-<li>見出し2(##)はセクションのタイトルを示します。</li>
-<li>セクションタイトルは自由につけることができます。</li>
-<li>見出し2(##)はチャプター定義ファイル内で複数定義することができます。</li>
-<li>見出し3(###)はサブセクションを示します。</li>
-<li>見出し3(###)の名前は「main」「hint」「preview」等固定です。</li>
-<li>見出し2(##)に続く複数の見出し3(###)がセクションの内容となります。</li>
-</ul>
-<p>未定義の名前を持つ見出し3、見出し4-見出し6はチャプター定義ファイルでは使用できません。<br />
-存在する場合はコンパイルエラーとなります。</p>
-<h3 id="_4">チャプター定義ファイルのコメント</h3>
-<p>コードブロック以外で「//」で始まる行はコメントとして扱われるため、Bookの内容には含まれません。</p>
-<p>この行はMarkdownの書式上でのコメント行ではないので、GitHub等のMarkdownViewer上ではそのまま表示されます。</p>
-<p>例</p>
-<pre><code># チャプター１
-
-// ToDo あとで修正する
-
-チャプター1の説明です。
-
-</code></pre>
-
-<p>逆にMarkdown書式のコメント「<code>&lt;!-- --&gt;</code>」はMarkdownViewer上では表示されませんが、Bookのコンパイルの際にはそのままのテキストとして扱われます。</p>
-<h3 id="_5">チャプタータイトルと説明</h3>
-<p>チャプター定義の先頭には必ず見出し1がきます。<br />
-そして、その次に来る見出しは必ず見出し2(セクションタイトル)になります。</p>
-<p>チャプタータイトルの下にはMarkdownで自由にチャプターの説明を記述することができます。<br />
-(ただし、見出しは使用できません。)</p>
-<p>注. 現在のBookReaderではチャプターの説明が表示されることはありません。(必要ならば改修します。)</p>
-<h3 id="_6">セクションの構成</h3>
-<p>セクションタイトルの下にはMarkdownで自由にセクションの説明を記述することができます。<br />
-(ただし、見出しは使用できません。)</p>
-<p>この説明はBookReaderの画面左に表示される問題文になります。</p>
-<p>セクションは以下のサブセクションを持つことができます。</p>
-<ul>
-<li>main</li>
-<li>hint</li>
-<li>tips</li>
-<li>files</li>
-<li>preview</li>
-<li>remote</li>
-</ul>
-<p>mainサブセクションは必須です。<br />
-それ以外のサブセクションは必要に応じて定義します。</p>
-<h3 id="main">mainの定義</h3>
-<p>mainサブセクションの定義は見出し3(###)で「main(ファイル名)」という形式で行います。</p>
-<p>mainサブセクションではコードブロックが必須であり、コードブロック内で一つ以上のAnswer定義が必須です。</p>
-<pre><code>### main(index.html)
-
-\```
-&lt;${p}&gt;Hello World&lt;${\/p}&gt;
-\```
-</code></pre>
-
-<p>Answerは通常、<code>${...}</code>という形式で定義し、最もシンプルなケースでは{}で囲まれた文字列がそのまま正答となります。(大文字小文字を区別します。)</p>
-<p>ただし、大文字小文字の区別をしないなど追加の要件に対応するために{}内の先頭文字によって以下のように解釈が変わります。</p>
-<h4 id="_7">先頭が「/」の場合</h4>
-<p>{}内は正規表現であると解釈されます。</p>
-<p>例
-- ${/red/i}  - 大文字小文字の区別なしで「red」にマッチ
-- ${/abc|def/} - 大文字小文字の区別ありで「abc」または「def」にマッチ</p>
-<p>JavaScriptのRegExがサポートする範囲で自由に正規表現を定義することが可能です。
-文字列が正規表現として不正な場合はコンパイルエラーとなります。</p>
-<p>注. <br />
-正規表現内でOR(|)や繰り返し(*)等を使用した場合、解答の最大長が計算できなくなります。<br />
-通常、BookReaderで表示されるブランクではwidthと入力のmaxlengthが解答の最大長に基づいて設定されますが、この場合は</p>
-<ul>
-<li>width: 8文字分</li>
-<li>maxlength: 設定なし</li>
-</ul>
-<p>となります。</p>
-<p>maxLengthを適切に設定したい場合は次節のJSON定義を使用してください。</p>
-<h4 id="_8">先頭が「{」の場合</h4>
-<p>{}内はJSONであると解釈されます。</p>
-<p>例
-- ${{"text": "hoge", "caseSensitive": true, "defaultValue": "fuga"}}
-- ${{"regexp": "hoge|fuga", "flags": "i", "maxLength": 4}}</p>
-<p>JSON内で定義できるキーは以下です。</p>
-<ul>
-<li>text: 正答となる文字列。textまたはregexpのいずれかは必須</li>
-<li>regexp: 正答となる正規表現。textまたはregexpのいずれかは必須</li>
-<li>caseSensitive: 大文字小文字を区別するかのフラグ。textの場合のみ有効</li>
-<li>flags: 正規表現のフラグ。例えば大文字小文字を区別しない場合は"i"を指定する。regexpの場合のみ有効</li>
-<li>maxLength: 解答の最大長。regexpの場合のみ有効</li>
-<li>defaultValue: 初期値。指定した場合最初から誤答がブランクに設定される。</li>
-</ul>
-<p>上記以外のキーは無視されます。</p>
-<h4 id="_9">先頭が「\」の場合</h4>
-<p>先頭の「\」を飛ばして次の文字以降をシンプルな文字列として解釈します。</p>
-<p>例
-- ${\/p}
-- ${{}</p>
-<p>この設定は文字列が正規表現、あるいはJSONと解釈されるのを防ぎたい場合に有効です。</p>
-<p>注.
-この機能はエスケープではなくあくまで先頭の「\」をスキップするだけの機能です。
-シンプルな文字列と解釈される場合のエスケープ機能はありません。</p>
-<h4 id="_10"><code>$</code>の別の文字への変更</h4>
-<p><code>${xxx}</code>という書式はES6やScalaでは構文として使用されています。<br />
-このようなケースに対応するために、prefixを定義して<code>$</code>を別の一文字に変更することができます。</p>
-<pre><code>### main(index.html)
-
-- prefix: %
-
-\```
-&lt;%{p}&gt;Hello World&lt;%{\/p}&gt;
-\```
-</code></pre>
-
-<p>prefixに二文字以上の文字列を指定した場合でも有効となるのは最初の一文字のみです。</p>
-<h4 id="alias">aliasの定義</h4>
-<p>mainサブセクションではオプションとしてalias(別名)を指定できます。</p>
-<pre><code>- alias: index1
-</code></pre>
-
-<p>ここで設定したaliasは後述する関数から参照できます。</p>
-<p>aliasで使用できる文字は <code>[0-9a-zA-Z_-.]</code> です。</p>
-<h3 id="hinttips">hint/tipsの定義</h3>
-<p>「### hint」または「### tips」という見出し3の下にMarkdownで任意の文章を定義することができます。</p>
-<p>hintあるいはtipsはデフォルトでは表示されず、ユーザーアクションによって表示される文字列です。</p>
-<p>hintとtipsには機能的な差異は存在しないので用途によって使い分けてください。(両方定義することも可能ですが、BookReaderの見栄え的にあまりお勧めはしません。)</p>
-<h3 id="files_1">filesの定義</h3>
-<p>filesには参照する外部ファイルをリスト形式で複数設定できます。
-ここで指定したファイルはエディタ部でタブとして表示されます。
-指定したファイルが存在しない場合はコンパイルエラーとなります。</p>
-<p>例</p>
-<pre><code>### files
-
-- main.css
-- [main.js](https://github.com/givery-technology/book-codeprep/chapter1/section1_main.js)
-</code></pre>
-
-<p>Markdownのリンク書式を使用して実際のファイル名と表示上のファイル名を変更することも可能です。</p>
-<h3 id="preview">previewの定義</h3>
-<p>プレビュー(BookReaderの画面右側下半分に表示される)は通常、後述のロジックに従って自動生成されますが独自のプレビューを
-ベット定義することができます。</p>
-<p>previewではコードブロックでインラインにpreviewを定義するか、リスト形式で</p>
-<pre><code>- file:chapter1/section1_preview.html
-</code></pre>
-
-<p>のように外部ファイルを参照することができます。</p>
-<p>preview機能は必ずしもmainの内容をそのまま再現する必要はなく、自由にカスタマイズすることができます。</p>
-<p>例</p>
-<pre><code>### main(chapter1.md)
-
-\```
-### ${preview}
-\```
-
-
-### preview
-
-\```
-&lt;html&gt;
-&lt;head&gt;
-  &lt;title&gt;Preview&lt;/title&gt;
-  &lt;script src=&quot;https://code.jquery.com/jquery-3.1.1.min.js&quot;&gt;&lt;/script&gt;
-&lt;script&gt;
-$(document).ready(function() {
-  var answer = &quot;${a1}&quot;;
-  if (answer === &quot;preview&quot;) {
-    $(&quot;#preview&quot;).show();
-  }
-});
-&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;p id=&quot;preview&quot; style=&quot;display:none;&quot;&gt;この文章はブランクを正しく埋めると表示されます。&lt;/p&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-\```
-</code></pre>
-
-<p>上の例ではユーザーの解答が正しい場合に説明文を表示しています。</p>
-<p>preview定義内では以下のキーワードが置換文字列として使用できます。</p>
-<ul>
-<li>${a1}, ${a2}... ユーザーの入力したブランクの解答。1ベースの序数で${a1}が最初のブランクに対応</li>
-<li>${content} mainの内容全体(ユーザーのブランク入力もそのまま反映されます。)</li>
-</ul>
-<p>また、コードブロック(file)とは別にオプションとして以下が設定できます。</p>
-<ul>
-<li>contentType: プレビューのContent-Type。省略時は text/html</li>
-<li>prefix: キーワード参照に使用するprefix。省略時は$。</li>
-</ul>
-<p>例</p>
-<pre><code>### preview
-
-- contentType: text/plain
-- prefix: %
-
-\```
-あなたの解答は%{a1}です。
-\```
-</code></pre>
-
-<h3 id="remote">remoteの定義</h3>
-<p>remoteはRubyなどのサーバーサイドの言語を実行する機能です。<br />
-commandに実行するコマンドを定義します。</p>
-<pre><code>### main(ruby.rb)
-\```
-${puts} &quot;Hello World&quot;
-\```
-
-### remote
-- command: ruby main.rb
-</code></pre>
-
-<p>上の例ではmainでユーザーが作成したmain.rbを実行しています。(Hello Worldが表示されます。)</p>
-<p>またオプションとして以下が設定できます。</p>
-<ul>
-<li>mode: 実行モード。<code>console</code>または<code>html</code>。省略時はconsole</li>
-<li>build: command実行前に実行する準備のコマンド。複数指定可</li>
-<li>file: 実行時に追加でサーバーにコピーするファイル。複数指定可</li>
-</ul>
-<h4 id="remote_1">remote実行時にコピーされるファイル</h4>
-<p>remote実行時には以下のファイルが実行サーバーにコピーされます。</p>
-<ul>
-<li>main(mainに指定されたファイル名でコピーされます。)</li>
-<li>book.ymlのfilesに指定されたファイル</li>
-<li>セクションのfilesサブセクションに指定されたファイル</li>
-<li>remoteサブセクションでfileオプションとして指定されたファイル</li>
-</ul>
-<p>コピー先のファイル名は別名が定義されている場合はそちらが使用されます。</p>
-<pre><code>### remote
-
-- build: npm install
-- command: node main.js
-- file: [package.json](https://github.com/givery-technology/book-codeprep/chapter1/package.json)
-
-</code></pre>
-
-<p>上の例では「npm install」を実行してからnodeが実行されます。</p>
-<p>Book定義時に実際にファイルが存在するパスは「chapter1/package.json」ですが、コピー先はコマンドを実行するrootディレクトリ上の「package.json」となります。</p>
-<p>(filesサブセクションで指定したファイルはエディタ部でタブとして表示されますが、remoteで指定されたファイルは非表示でユーザーには提示されないという違いがあります。)</p>
-<p>画像ファイルなどサイズの大きなファイルを多数転送するとパフォーマンス低下につながるので注意してください。</p>
-<h4 id="html-mode">html mode</h4>
-<p>PHPのBookなどではコマンドの実行結果がそのままHTMLとなっている場合があります。
-その場合は、</p>
-<pre><code>- mode: html
-</code></pre>
-
-<p>を設定しておくことでコマンド実行後にHTMLでのプレビューを表示させることができます。</p>
-<h3 id="remotepreview">remoteまたはpreviewが未定義の場合のプレビュー</h3>
-<p>画面右下に表示される内容は以下の優先順位で決定します。</p>
-<ul>
-<li>remoteが定義されている場合はremoteコンソールが表示されます。</li>
-<li>previewが定義されている場合はその内容がpreviewとして表示されます。</li>
-<li>mainのファイル名がindex.htmlの場合はその内容が表示されます。</li>
-<li>filesサブセクションに「index.html」というファイルが指定されている場合はその内容が表示されます。</li>
-<li>いずれにも該当しない場合はmainの内容がtext/plainで表示されます。</li>
-</ul>
-<p>なお、mainとfilesで定義されたファイル間でのscript/cssの参照は自動的に解決されます。<br />
-また、HTML内で画像ファイルを相対パスで参照する場合はそのファイルはfilesサブセクション(またはbook.ymlのfiles)に設定されている必要があります。</p>
-<p>この際の参照関係の解決はファイル名のみで行われます。</p>
-<p>例えば、filesサブセクションに</p>
-<pre><code>- image1.png
-</code></pre>
-
-<p>が設定されている場合、 HTML内で定義されているimgタグが <code>&lt;img src="image1.png"/&gt;</code> でも <code>&lt;img src="hoge/image1.png"/&gt;</code> でも同じ画像が表示されます。</p>
-<h2 id="_11">高度な機能</h2>
-<p>ここではBookを作成する上で、さらに便利な機能を紹介します。</p>
-<h3 id="main_1">main内での先行セクション、外部ファイルの参照</h3>
-<p>例として、</p>
-<ul>
-<li>セクション1でh1を定義し、</li>
-<li>セクション2でその下にh2を定義し、</li>
-<li>セクション3でその下にpタグを定義する</li>
-</ul>
-<p>というケースを考えてみます。</p>
-<p>素直に書くとそれぞれのmainの定義は以下のようになります。</p>
-<p>Section1</p>
-<pre><code>&lt;${h1}&gt;This is H1&lt;${\/h1}&gt;
-</code></pre>
-
-<p>Section2</p>
-<pre><code>&lt;h1&gt;This is H1&lt;/h1&gt;
-&lt;${h2}&gt;This is H2&lt;${\/h2}&gt;
-</code></pre>
-
-<p>Section3</p>
-<pre><code>&lt;h1&gt;This is H1&lt;/h1&gt;
-&lt;h2&gt;This is H2&lt;/h2&gt;
-&lt;${p}&gt;This is p&lt;${/p}&gt;
-</code></pre>
-
-<p>前の内容をコピーしながら少しずつ内容を書き足していることがわかります。</p>
-<p>これでも問題なく動作しますが、メンテナンス性はかなり悪くなります。(最初の方のセクションを修正してしまうとそれ以降のすべてを修正する羽目になります。)</p>
-<p>この場合 <code>${codeprep:section(prev)}</code> という関数を使用することで直前のセクションの完成した内容を参照することができます。<br />
-この機能によって先の内容は以下のように書き換えることができます。</p>
-<p>Section1</p>
-<pre><code>&lt;${h1}&gt;This is H1&lt;${\/h1}&gt;
-</code></pre>
-
-<p>Section2</p>
-<pre><code>${codeprep:section(prev)}
-&lt;${h2}&gt;This is H2&lt;${\/h2}&gt;
-</code></pre>
-
-<p>Section3</p>
-<pre><code>${codeprep:section(prev)}
-&lt;${p}&gt;This is p&lt;${/p}&gt;
-</code></pre>
-
-<p>注.
-Answerを正規表現で定義している場合、正解を決定できないことがあります。<br />
-例えば <code>${abc|def}</code> という正規表現では"abc"と"def"のどちらを正解とするべきか判断できません。<br />
-この場合はコンパイルエラーとなるのでJSON形式でのAnswer定義を使用してください。</p>
-<p>このcodeprep:section関数では引数として"prev"以外に以下を取ることができます。</p>
-<ul>
-<li>数字: 同一チャプター内のセクション番号。</li>
-<li>例: <code>${codeprep:section(2)}</code> はセクション2の内容を参照します。</li>
-<li>任意の文字列: 先行するmainで定義されたaliasを検索し参照します。</li>
-<li>例: <code>${codeprep:section(index1)}</code> は <code>- alias: index1</code> を持つmain定義を参照します。</li>
-</ul>
-<p>いずれの場合もそのセクションが見つからない場合はコンパイルエラーとなります。</p>
-<h3 id="section">その他のsectionを参照する関数</h3>
-<p>先のsection関数は指定のmainの内容をまるごと参照していましたが、追加する内容が前の内容の後ではなく間に挟まることも多々あります。<br />
-こうしたケースに対応するため以下の関数があります。</p>
-<p>(下記のSYMBOLはsection関数と同じ引数(prev, 数値, alias)のことです。)</p>
-<ul>
-<li>section-before-blank(SYMBOL)</li>
-<li>main定義中の最初のブランク出現行を検索し、その前の行までを返します。(ブランク行を含まない)</li>
-<li>section-after-blank(SYMBOL)</li>
-<li>main定義中の最後のブランク出現行を検索し、その後ろの行を返します。(ブランク行を含まない)</li>
-<li>section-to-blank(SYMBOL)</li>
-<li>main定義中の最後のブランク出現行を検索し、その行までを返します。(ブランク行を含む)</li>
-<li>section-from-blank(SYMBOL)</li>
-<li>main定義中の最初のブランク出現行を検索し、その行以降を返します。(ブランク行を含む)</li>
-</ul>
-<p>また、任意の文字列を検索してその行を基準に内容を分割する関数もあります。</p>
-<ul>
-<li>section-before(SYMBOL, "検索文字列")</li>
-<li>main定義から指定の文字列のある行を検索し、その前の行までを返します。(検索行を含まない)</li>
-<li>section-after(SYMBOL, "検索文字列")</li>
-<li>main定義から指定の文字列のある行を検索し、その後ろの行を返します。(検索行を含まない)</li>
-<li>section-to(SYMBOL, "検索文字列")</li>
-<li>main定義から指定の文字列のある行を検索し、その行までを返します。(検索行を含む)</li>
-<li>section-from(SYMBOL, "検索文字列")</li>
-<li>main定義から指定の文字列のある行を検索し、その行以降を返します。(検索行を含む)</li>
-</ul>
-<p>こちらの関数では指定の文字列を含む行が2行以上ある場合はコンパイルエラーとなります。</p>
-<p>例</p>
-<pre><code>...
-&lt;div&gt;
-  &lt;${ul}&gt;&lt;${\/ul}&gt;
-&lt;/div&gt;
-...
-</code></pre>
-
-<pre><code>${codeprep:section-before-blank(prev)}
-  &lt;ul&gt;
-    &lt;${li}&gt;&lt;${\/li}&gt;
-    &lt;${li}&gt;&lt;${\/li}&gt;
-  &lt;/ul&gt;
-${codeprep:section-after-blank(prev)}
-</code></pre>
-
-<h3 id="file">fileを参照する関数</h3>
-<p>セクションではなく外部ファイルを参照する関数もあります。<br />
-こちらの関数では第一引数は外部ファイルへのパスとなります。</p>
-<ul>
-<li>${codeprep:file(filepath)}</li>
-<li>${codeprep:file-before-blank(filepath)}</li>
-<li>${codeprep:file-after-blank(filepath)}</li>
-<li>${codeprep:file-to-blank(filepath)}</li>
-<li>${codeprep:file-from-blank(filepath)}</li>
-<li>${codeprep:file-before(filepath, "検索文字列")}</li>
-<li>${codeprep:file-after(filepath, "検索文字列")}</li>
-<li>${codeprep:file-to(filepath, "検索文字列")}</li>
-<li>${codeprep:file-from(filepath, "検索文字列")}</li>
-</ul>
-<h3 id="files_2">filesサブセクションでの先行セクションの参照</h3>
-<p>filesサブセクションでも外部ファイルではなく先行するセクションを参照することができます。</p>
-<pre><code>### files
-- section: prev
-</code></pre>
-
-<p>参照名にはsection関数と同様に</p>
-<ul>
-<li>prev</li>
-<li>数値(同一チャプターのセクション番号)</li>
-<li>先行するセクションで定義したalias</li>
-</ul>
-<p>が指定できます。</p>
-<p>この機能をうまく利用すると、例えばHTMLとCSSを交互に編集しながら組み立てるようなBookを一切外部ファイルの参照なしで組み立てることも可能です。</p>
-<h3 id="deprecated">作ってみたけどいきなりDeprecatedな関数</h3>
-<p>上記以外にもチャプター番号とセクション番号で参照する関数もあります。</p>
-<ul>
-<li>${codeprep:chapter(chapterIndex, sectionIndex)}</li>
-<li>${codeprep:chapter-before-blank(chapterIndex, sectionIndex)}</li>
-<li>${codeprep:chapter-after-blank(chapterIndex, sectionIndex)}</li>
-<li>${codeprep:chapter-to-blank(chapterIndex, sectionIndex)}</li>
-<li>${codeprep:chapter-from-blank(chapterIndex, sectionIndex)}</li>
-<li>${codeprep:chapter-before(chapterIndex, sectionIndex, "検索文字列")}</li>
-<li>${codeprep:chapter-after(chapterIndex, sectionIndex, "検索文字列")}</li>
-<li>${codeprep:chapter-to(chapterIndex, sectionIndex, "検索文字列")}</li>
-<li>${codeprep:chapter-from(chapterIndex, sectionIndex, "検索文字列")}</li>
-</ul>
-<p>ただし、aliasを使用すればsection関数を使えば別チャプターも参照できることと、chapter/section番号はBook編集中に容易に変わりえることからあまりオススメはしません。</p>
-<p>同様にfilesサブセクションでも</p>
-<pre><code>- chapter: 1-2
-</code></pre>
-
-<p>というチャプター番号とセクション番号での参照が可能ですが、同じ理由でsectionでのalias参照を推奨します。</p></div>
+<li><a href="get-start/">Bookをつくってみよう</a></li>
+<li><a href="how-to-make-book/">Bookの作り方</a></li>
+</ul></div>
         </div>
 
         <footer class="col-md-12">
