@@ -106,8 +106,7 @@
         
             <li><a href="#4bookcodeprep-book">4.サンプルBookでCODEPREP Bookで出来ることを確認してみよう</a></li>
         
-    
-        <li class="main "><a href="#todo">ToDo</a></li>
+            <li><a href="#5">5.ブックテンプレート</a></li>
         
     
     </ul>
@@ -131,13 +130,13 @@ $ ./setup.sh
 <h3 id="2-book">2. サンプルBookのインストール</h3>
 <p>次に、サンプルアプリをインストールします。  </p>
 <pre><code class="bash">$ cd ../
-$ git clone git@github.com:code-prep/sample-book.git
+$ git clone git@github.com:codeprep-authors/themplete-books.git
 </code></pre>
 
 <h3 id="3-book">3. サンプルBookをプレビュー</h3>
 <p>サンプルBookをPreview Appを使って開いてみましょう。<br />
 Preview Appでサンプルアプリを実行するには、<code>BOOK_SRCDIR</code>にサンプルBookを指定する必要があります。</p>
-<pre><code>$　cd book-codeprep
+<pre><code class="basj">$ cd templete-books
 $ sbt run -DBOOK_SRCDIR=../sample-book
 </code></pre>
 
@@ -146,9 +145,14 @@ $ sbt run -DBOOK_SRCDIR=../sample-book
 <h3 id="4bookcodeprep-book">4.サンプルBookでCODEPREP Bookで出来ることを確認してみよう</h3>
 <p>サンプルBookには、CODEPREP Bookで出来ることが記載されています。<br />
 <a href="../how-to-make-book/">CODEPREP bookの作り方</a>を参照しながら、あなただけのオリジナルBookを作成してみてください。</p>
-<h2 id="todo">ToDo</h2>
-<p>Separate BookCompiler from codeprep-backend and get it from some repo.</p>
-<p>Then we can provide this app to external authors.</p></div>
+<h3 id="5">5.ブックテンプレート</h3>
+<ul>
+<li><a href="https://github.com/codeprep-authors/template-books">ブックテンプレート</a>にアクセスすると、CODEPREP上で実際に提供されいている無料ブックの中身を確認することが出来ます。オリジナルブックを作成する際に、参考にしたい、あるいはベースにしたい、という場合は、以下の手順でテンプレートをご参照ください。</li>
+</ul>
+<pre><code class="bash">$ git clone git@github.com:codeprep-authors/themplete-books.git
+$ cd templete-books
+$ sbt run -DBOOK_SRCDIR=../{DIR_NAME}
+</code></pre></div>
         </div>
 
         <footer class="col-md-12">
