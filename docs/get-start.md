@@ -20,15 +20,15 @@ $ ./setup.sh
 
 ``` bash
 $ cd ../
-$ git clone git@github.com:code-prep/sample-book.git
+$ git clone git@github.com:codeprep-authors/themplete-books.git
 ```
 
 ### 3. サンプルBookをプレビュー
 サンプルBookをPreview Appを使って開いてみましょう。  
 Preview Appでサンプルアプリを実行するには、`BOOK_SRCDIR`にサンプルBookを指定する必要があります。
 
-```
-$　cd book-codeprep
+```basj
+$ cd templete-books
 $ sbt run -DBOOK_SRCDIR=../sample-book
 ```
 
@@ -39,7 +39,11 @@ $ sbt run -DBOOK_SRCDIR=../sample-book
 サンプルBookには、CODEPREP Bookで出来ることが記載されています。  
 [CODEPREP bookの作り方](how-to-make-book.md)を参照しながら、あなただけのオリジナルBookを作成してみてください。
 
-## ToDo
-Separate BookCompiler from codeprep-backend and get it from some repo.
+### 5.ブックテンプレート
+- [ブックテンプレート](https://github.com/codeprep-authors/template-books)にアクセスすると、CODEPREP上で実際に提供されいている無料ブックの中身を確認することが出来ます。オリジナルブックを作成する際に、参考にしたい、あるいはベースにしたい、という場合は、以下の手順でテンプレートをご参照ください。
 
-Then we can provide this app to external authors.
+```bash
+$ git clone git@github.com:codeprep-authors/themplete-books.git
+$ cd templete-books
+$ sbt run -DBOOK_SRCDIR=../{DIR_NAME}
+```
