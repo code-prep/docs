@@ -1,7 +1,9 @@
 site_name: CODEPREP documentation
 pages:
-  - CODEPREP documentへようこそ: index.md
-  - CODEPREP bookの作り方: how-to-make-book.md
-  - CODEPREP sample bookを作る: get-start.md
-
+  - Home: 'index.md'
+  - Get Start:
+    - 'sample bookを作る': 'getstart/how-to-make-book.md'
+    - 'bookの作り方': 'getstart/get-start.md'
+  - Contract :
+      - 'ご契約について': 'contract/index.md'
 theme: yeti

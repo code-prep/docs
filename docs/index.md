@@ -11,5 +11,10 @@ CODEPREP上に掲載されているコンテンツの事を指します。
 ## Bookを作ってみましょう
 CODEPREPでは誰もが簡単にBOOKを展開できるような機能を展開することで、新しい技術を誰でも簡単に学べるeBOOKプラットフォームを目指しています。基本的にはCODEPREP Officialチームがユーザに向けてBOOKを展開していますが、Bookの作成手順を公開してくことで、サービスのオープン化を目指します。  
 
-- [Bookをつくってみよう](get-start.md)
-- [Bookの作り方](how-to-make-book.md)
+- [Bookをつくってみよう](getstart/get-start.md)
+- [Bookの作り方](getstart/how-to-make-book.md)
+
+## 各種状況確認
+- [問題作成用のリポジトリ](https://github.com/givery-technology/codeprep-contents-new)
+- [問題の作成進捗状況](https://waffle.io/givery-technology/codeprep-contents-new)
+- [内部メンバーとのチャットGitter](https://gitter.im/codeprep-authors/Lobby)
