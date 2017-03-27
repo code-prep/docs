@@ -2,8 +2,8 @@ site_name: CODEPREP documentation
 pages:
   - Home: 'index.md'
   - Bookを作る:
-    - 'sample bookを作る': 'getstart/how-to-make-book.md'
-    - 'bookの作り方': 'getstart/get-start.md'
+    - 'sample bookを作る': 'getstart/get-start.md'
+    - 'bookの作り方': 'getstart/how-to-make-book.md'
   - ご契約について :
       - 'ご契約について': 'contract/index.md'
 theme: yeti
