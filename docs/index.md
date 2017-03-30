@@ -15,6 +15,7 @@ CODEPREPでは誰もが簡単にBOOKを展開できるような機能を展開�
 - [Bookの作り方](getstart/how-to-make-book.md)
 
 ## 各種状況確認
-- [問題作成用のリポジトリ](https://github.com/givery-technology/codeprep-contents-new)
-- [問題の作成進捗状況](https://waffle.io/givery-technology/codeprep-contents-new)
+- [ブックアイディアBacklog](https://docs.google.com/spreadsheets/d/19ixil7ELowGmxtARhXP1CJVEMx2inAWoMcW6lHWekUQ/edit#gid=577113549)
+- [ブック作成用のリポジトリ](https://github.com/givery-technology/codeprep-contents-new)
+- [ブックの作成進捗状況](https://waffle.io/givery-technology/codeprep-contents-new)
 - [内部メンバーとのチャットGitter](https://gitter.im/codeprep-authors/Lobby)
